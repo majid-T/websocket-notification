@@ -19,12 +19,15 @@ io.on('connection', (clientSocket) => {
     let notificationCount = 0;
     console.log(`New connection stablished... ${clientSocket.id}`)
 
-    clientSocket.emit('newNotification', { count: ++notificationCount, msgs: ["some msg"] })
-    clientSocket.emit('newNotification', { count: ++notificationCount, msgs: ["some msg"] })
+    setInterval(() => {
+        clientSocket.emit('newNotification', { count: ++notificationCount, msgs: ["some msg"] });
+    }, 3000);
 
     clientSocket.on('seen', (data) => {
         console.log(data)
         notificationCount = 0;
         console.log("Notification count", notificationCount)
     })
+
+
 })
