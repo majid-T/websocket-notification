@@ -6,8 +6,9 @@ const socket = io.connect(WS_SERVER)
 
 // DOM elements
 const notificationBox = document.getElementById('notificationBox');
+const notificationCount = document.getElementById('notificationCount');
 
-// Event listeners
+// Events
 notificationBox.addEventListener('click', () => {
     socket.emit('seen', {
         user: 'UserA',
@@ -16,4 +17,11 @@ notificationBox.addEventListener('click', () => {
 
     notificationBox.classList.remove('show')
     notificationBox.classList.add('hide')
+})
+
+socket.on('newNotification', (data) => {
+    notificationBox.classList.remove('hide')
+    notificationBox.classList.add('show')
+    notificationCount.innerHTML = data.count;
+    console.log(data)
 })
