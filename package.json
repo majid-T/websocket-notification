@@ -1,0 +1,25 @@
+{
+  "name": "websocket-notification",
+  "version": "1.0.0",
+  "description": "Web socket for notification",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majid-T/websocket-notification.git"
+  },
+  "author": "Majid-T",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/majid-T/websocket-notification/issues"
+  },
+  "homepage": "https://github.com/majid-T/websocket-notification#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
