@@ -17,4 +17,10 @@ const io = socket(wsServer);
 
 io.on('connection', (clientSocket) => {
     console.log(`New connection stablished... ${clientSocket.id}`)
+
+    clientSocket.emit('newNotification', { msg: "some msg" })
+
+    clientSocket.on('seen', (data) => {
+        console.log(data)
+    })
 })
